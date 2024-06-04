@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Myntra</title>
+
+  <link rel="stylesheet" href="myntra.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+  <!-- navbar -->
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="images/myntra_logo.jpeg" alt="" height="50px" width="70px"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+          <li class="nav-item mx-2">
+            <a class="nav-link active" aria-current="page" href="#">MEN</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="https://www.myntra.com/womens?rawQuery=womens">WOMEN</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="https://www.myntra.com/shop/home-living">HOME & LIVING</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="https://www.myntra.com/personal-care">BEAUTY</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="https://www.myntra.com/studio/home">STUDIO <sup style="color: grey;">NEW</sup></a>
+          </li>
+        </ul>
+        <form style="margin-right: 300px;" class="d-flex">
+          
+          <input class="form-control me-5 " type="search" placeholder="Search for products" aria-label="Search">
+
+        </form>
+
+        <ul class="navbar-nav me-0 mb-2 mb-lg-0 " style="position: relative;">
+          <li class="nav-item mx-2">
+            <a class="nav-link active" aria-current="page" href="#">
+              <img src="images/myntra_profile.png" alt="" width="25px" height="25px">
+              <p><small>Profile
+                  <ul id="nested" style="z-index: 3;">
+                    <li>Orders</li>
+                    <li>Gift card</li>
+                    <li>Contact Us</li>
+                  </ul>
+                </small></p>
+            </a>
+          </li>
+
+          <li class="nav-item mx-2">
+            <a class="nav-link active" aria-current="page" href="#">
+              <img src="images/myntra_whishlist.png" alt="" width="25px" height="25px">
+              <p><small>whislist</small></p>
+            </a>
+          </li>
+
+          <li class="nav-item mx-2">
+            <a class="nav-link active" aria-current="page" href="#">
+              <img src="images/myntra_bag.png" alt="" width="25px" height="25px">
+              <p><small>Bag</small></p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- carousel   -->
+  <div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner container-fluid">
+      <div class="carousel-item active">
+        <img src="images/myntra1.jpeg" class="d-block" style="margin: auto;" width="1200px" height="600px" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="images/myntra2.jpeg" class="d-block" style="margin: auto;" width="1200px" height="600px" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="images/myntra3.jpeg" class="d-block" style="margin: auto;" width="1200px" height="600px" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- text -->
+  <div class="d-flex justify-content-center h1 my-3 p-5 bg-light">
+    <h1 style="font-size: 60px; color: brown;text-shadow: 2px 2px 2px black; "><strong>Coupons TO chill and
+        save</strong></h1>
+  </div>
+
+  <!-- banner -->
+  <section class="banner container-fluid">
+    <div class="row">
+      <div class="col-lg-6 col-md-12 col-sm-12">
+        <a href="https://www.myntra.com/online-fashion-store">
+          <img src="images/myntra_offer1.png" alt="" width="700px" class="img-fluid">
+        </a>
+        
+      </div>
+      <div class="col-lg-6 col-md-12 col-sm-12">
+        <a href="https://www.myntra.com/offer-products?rawQuery=offer%20products">
+          <img src="images/myntra_offer2.png" alt="" width="700px" class="img-fluid">
+        </a>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- text -->
+  <div class="d-flex justify-content-center my-3 p-5 bg-light" style="border: 5px solid red;">
+    <h1 style="color: grey; text-shadow: 5px 2px 10px rgb(207, 207, 49);"><strong>CRAZY DEALS</strong></h1>
+  </div>
+
+  <!-- cards1 -->
+  <section class="cards">
+    <div class="container-fluid">
+      <div class="row" style="border: 2px solid black;">
+        <div class="col-sm-6 col-md-4 col-lg-2" style="border: 2px solid green; box-shadow: 5px 10px 5px black;">
+          <div class="card" style="width: 14rem;">
+            <a href="https://www.myntra.com/shirts?rawQuery=shirts">
+              <img src="images/myntra_card1.jpeg" class="card-img-top" height="200px" alt="...">
+            </a>      
+            <div class="card-body">
+              <h4 class="card-title">MIN 60% OFF</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-2" style="border: 2px solid green; box-shadow: 5px 10px 5px black;">
+          <div class="card" style="width: 14rem;">
+            <a href="https://www.myntra.com/jacket?rawQuery=jacket">
+              <img src="https://source.unsplash.com/200x200?mens" class="card-img-top" height="200px" alt="...">
+            </a>
+            
+            <div class="card-body">
+              <h4 class="card-title">UPTO 50% OFF</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-2" style="border: 2px solid green; box-shadow: 5px 10px 5px black;">
+          <div class="card" style="width: 14rem;">
+            <a href="https://www.myntra.com/shoes?rawQuery=shoes">
+              <img src="images/myntra_card3.jpeg" class="card-img-top" height="200px" alt="...">
+            </a>
+            
+            <div class="card-body">
+              <h4 class="card-title">MIN 40% OFF</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-2" style="border: 2px solid green; box-shadow: 5px 10px 5px black;">
+          <div class="card" style="width: 14rem;">
+            <a href="https://www.myntra.com/wallet?rawQuery=wallet">
+              <img src="images/myntra_card4.jpeg" class="card-img-top" height="200px" alt="...">
+            </a>
+            <div class="card-body">
+              <h4 class="card-title">UNDER 999</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-2" style="border: 2px solid green; box-shadow: 5px 10px 5px black;">
+          <div class="card" style="width: 14rem;">
+            <a href="https://www.myntra.com/lipstick?rawQuery=lipstick">
+              <img src="images/myntra_card5.jpeg" class="card-img-top" height="200px" alt="...">
+            </a>
+            
+            <div class="card-body">
+              <h4 class="card-title">Min 70% offer</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-2" style="border: 2px solid green; box-shadow: 5px 10px 5px black;">
+          <div class="card" style="width: 14rem;">
+            <a href="https://www.myntra.com/saree?rawQuery=saree">
+              <img src="images/myntra_card6.jpeg" class="card-img-top" height="200px" alt="...">
+            </a>
+           
+            <div class="card-body">
+              <h4 class="card-title">Min 30% offer</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- cards2 -->
+  <section class="cards">
+    <div class="container-fluid">
+      <div class="row" style="border: 2px solid black;">
+        <div class="col-sm-6 col-md-4 col-lg-2" style="border: 2px solid green; box-shadow: 5px 10px 5px black;">
+          <div class="card" style="width: 14rem;">
+            <a href="https://www.myntra.com/slipper?rawQuery=slipper">
+              <img src="https://source.unsplash.com/200x200?slipper" class="card-img-top" height="200px" alt="...">
+            </a>
+            <div class="card-body">
+              <h4 class="card-title">MIN 60% OFF</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-2" style="border: 2px solid green; box-shadow: 5px 10px 5px black;">
+          <div class="card" style="width: 14rem;">
+            <a href="https://www.myntra.com/pullover?rawQuery=pullover">
+              <img src="images/myntra_card8.jpeg" class="card-img-top" height="200px" alt="...">
+            </a>
+            
+            <div class="card-body">
+              <h4 class="card-title">UPTO 50% OFF</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-2" style="border: 2px solid green; box-shadow: 5px 10px 5px black;">
+          <div class="card" style="width: 14rem;">
+            <a href="https://www.myntra.com/formal-shirts?rawQuery=formal%20shirts">
+              <img src="https://source.unsplash.com/200x200?shirts" class="card-img-top" height="200px" alt="...">
+            </a>
+            
+            <div class="card-body">
+              <h4 class="card-title">MIN 40% OFF</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-2" style="border: 2px solid green; box-shadow: 5px 10px 5px black;">
+          <div class="card" style="width: 14rem;">
+            <a href="https://www.myntra.com/socks?rawQuery=socks">
+              <img src="https://source.unsplash.com/200x200?socks" class="card-img-top" height="200px" alt="...">
+            </a>
+            
+            <div class="card-body">
+              <h4 class="card-title">UNDER 999</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-2" style="border: 2px solid green; box-shadow: 5px 10px 5px black;">
+          <div class="card" style="width: 14rem;">
+            <a href="https://www.myntra.com/casual-wear?rawQuery=casual%20wear">
+              <img src="https://source.unsplash.com/200x200?casualwear" class="card-img-top" height="200px" alt="...">
+            </a>
+            
+            <div class="card-body">
+              <h4 class="card-title">Min 70% offer</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-2" style="border: 2px solid green; box-shadow: 5px 10px 5px black;">
+          <div class="card" style="width: 14rem;">
+            <a href="https://www.myntra.com/t-shirt?rawQuery=t%20shirt">
+              <img src="images/myntra_card12.jpeg" class="card-img-top" height="200px" alt="...">
+            </a>
+            
+            <div class="card-body">
+              <h4 class="card-title">Min 30% offer</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- text -->
+  <div class="d-flex justify-content-center my-3 p-5 bg-light">
+    <h1 style="color:orange; text-shadow: 2px 2px 4px green;"><strong>SHOP BY CATEGORY</strong></h1>
+  </div>
+
+  <!-- cards3 -->
+  <section class="cards">
+    <div class="container-fluid">
+      <div class="row" style="border: 2px solid black;">
+        <div class="col-sm-6 col-md-4 col-lg-2" style="border: 2px solid green; box-shadow: 5px 10px 5px black;">
+          <div class="card" style="width: 14rem;">
+            <a href="https://www.myntra.com/shirts?rawQuery=shirts">
+              <img src="images/myntra_card1.jpeg" class="card-img-top" height="200px" alt="...">
+            </a>      
+            <div class="card-body">
+              <h4 class="card-title">MIN 60% OFF</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-2" style="border: 2px solid green; box-shadow: 5px 10px 5px black;">
+          <div class="card" style="width: 14rem;">
+            <a href="https://www.myntra.com/jacket?rawQuery=jacket">
+              <img src="https://source.unsplash.com/200x200?mens" class="card-img-top" height="200px" alt="...">
+            </a>
+            
+            <div class="card-body">
+              <h4 class="card-title">UPTO 50% OFF</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-2" style="border: 2px solid green; box-shadow: 5px 10px 5px black;">
+          <div class="card" style="width: 14rem;">
+            <a href="https://www.myntra.com/shoes?rawQuery=shoes">
+              <img src="images/myntra_card3.jpeg" class="card-img-top" height="200px" alt="...">
+            </a>
+            
+            <div class="card-body">
+              <h4 class="card-title">MIN 40% OFF</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-2" style="border: 2px solid green; box-shadow: 5px 10px 5px black;">
+          <div class="card" style="width: 14rem;">
+            <a href="https://www.myntra.com/wallet?rawQuery=wallet">
+              <img src="images/myntra_card4.jpeg" class="card-img-top" height="200px" alt="...">
+            </a>
+            <div class="card-body">
+              <h4 class="card-title">UNDER 999</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-2" style="border: 2px solid green; box-shadow: 5px 10px 5px black;">
+          <div class="card" style="width: 14rem;">
+            <a href="https://www.myntra.com/lipstick?rawQuery=lipstick">
+              <img src="images/myntra_card5.jpeg" class="card-img-top" height="200px" alt="...">
+            </a>
+            
+            <div class="card-body">
+              <h4 class="card-title">Min 70% offer</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-2" style="border: 2px solid green; box-shadow: 5px 10px 5px black;">
+          <div class="card" style="width: 14rem;">
+            <a href="https://www.myntra.com/saree?rawQuery=saree">
+              <img src="images/myntra_card6.jpeg" class="card-img-top" height="200px" alt="...">
+            </a>
+           
+            <div class="card-body">
+              <h4 class="card-title">Min 30% offer</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- cards4 -->
+  <section class="cards">
+    <div class="container-fluid">
+      <div class="row" style="border: 2px solid black;">
+        <div class="col-sm-6 col-md-4 col-lg-2" style="border: 2px solid green; box-shadow: 5px 10px 5px black;">
+          <div class="card" style="width: 14rem;">
+            <a href="https://www.myntra.com/slipper?rawQuery=slipper">
+              <img src="https://source.unsplash.com/200x200?slipper" class="card-img-top" height="200px" alt="...">
+            </a>
+            <div class="card-body">
+              <h4 class="card-title">MIN 60% OFF</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-2" style="border: 2px solid green; box-shadow: 5px 10px 5px black;">
+          <div class="card" style="width: 14rem;">
+            <a href="https://www.myntra.com/pullover?rawQuery=pullover">
+              <img src="images/myntra_card8.jpeg" class="card-img-top" height="200px" alt="...">
+            </a>
+            
+            <div class="card-body">
+              <h4 class="card-title">UPTO 50% OFF</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-2" style="border: 2px solid green; box-shadow: 5px 10px 5px black;">
+          <div class="card" style="width: 14rem;">
+            <a href="https://www.myntra.com/formal-shirts?rawQuery=formal%20shirts">
+              <img src="https://source.unsplash.com/200x200?shirts" class="card-img-top" height="200px" alt="...">
+            </a>
+            
+            <div class="card-body">
+              <h4 class="card-title">MIN 40% OFF</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-2" style="border: 2px solid green; box-shadow: 5px 10px 5px black;">
+          <div class="card" style="width: 14rem;">
+            <a href="https://www.myntra.com/socks?rawQuery=socks">
+              <img src="https://source.unsplash.com/200x200?socks" class="card-img-top" height="200px" alt="...">
+            </a>
+            
+            <div class="card-body">
+              <h4 class="card-title">UNDER 999</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-2" style="border: 2px solid green; box-shadow: 5px 10px 5px black;">
+          <div class="card" style="width: 14rem;">
+            <a href="https://www.myntra.com/casual-wear?rawQuery=casual%20wear">
+              <img src="https://source.unsplash.com/200x200?casualwear" class="card-img-top" height="200px" alt="...">
+            </a>
+            
+            <div class="card-body">
+              <h4 class="card-title">Min 70% offer</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-2" style="border: 2px solid green; box-shadow: 5px 10px 5px black;">
+          <div class="card" style="width: 14rem;">
+            <a href="https://www.myntra.com/t-shirt?rawQuery=t%20shirt">
+              <img src="images/myntra_card12.jpeg" class="card-img-top" height="200px" alt="...">
+            </a>
+            
+            <div class="card-body">
+              <h4 class="card-title">Min 30% offer</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
