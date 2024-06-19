@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="todo1.css">
+</head>
+<body>
+    <div class="container">
+        <div class="to-do">
+            <h2>TO DO LIST</h2>
+            <div class="row">
+                <input id="input-box" type="text" placeholder="Add your tasks" >
+                <button id="add-button">Add tasks</button>
+            </div>
+            <ul id="list-container"></ul>
+        </div>
+    </div>
+
+    <script>
+        let inputBox = document.querySelector('#input-box')
+        let addButton = document.querySelector('#add-button')
+        let listContainer = document.querySelector('#list-container')
+        addButton.addEventListener('click',function(){
+            if(inputBox.value === '')
+            {
+                alert('enter the task')
+            }
+            else{
+                let li = document.createElement('li')
+
+                let checkbox = document.createElement('input')
+                checkbox.type = 'checkbox'
+                checkbox.onclick = function(){
+                    if(checkbox.checked)
+                    {
+                        li.style.textDecoration = 'line-through'
+                    }
+                    else{
+                        li.style.textDecoration = 'none'
+                    }
+                }
+
+                let span = document.createElement("span");
+                span.innerText = inputBox.value;
+                
+                let deleteButton = document.createElement("button")
+                deleteButton.id = 'delete'
+                deleteButton.innerHTML = 'Delete'
+                deleteButton.onclick = function(){
+                    li.remove()
+                }
+
+                let editButton = document.createElement('button')
+                editButton.id = 'edit'
+                editButton.innerHTML = 'Edit'
+                editButton.onclick = function(event)
+                {
+                    let newTask = prompt("Enter new task", event.target.parentElement.children[1].innerText);
+                    event.target.parentElement.children[1].innerText = newTask;  
+                
+                    
+
+                }
+                li.appendChild(checkbox)
+                li.appendChild(span)
+                li.appendChild(editButton)
+                li.appendChild(deleteButton)
+                listContainer.appendChild(li)
+                inputBox.value = ''
+
+            }
+        })
+       
+    </script>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+

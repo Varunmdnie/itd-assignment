@@ -1,0 +1,85 @@
+*{
+    margin: 0px;
+    border: 0px;
+    box-sizing: border-box;
+}
+
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(images/bgimg1.avif);
+    padding: 10px;
+
+}
+.to-do{
+    width: 100%;
+    max-width: 540px;
+    background-color: white;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+.to-do h2{
+    color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background-color:aqua;
+    border-radius: 30px;
+    padding-left: 20px;
+}
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 10px;
+    font-weight: 14px;
+    font-size: 16px;
+}
+#add-button{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: blueviolet;
+    color: white;
+    padding: 20px 40px;
+    font-size: 16px;
+    border-radius: 30px;
+
+}
+ul li{
+    list-style: none;
+    margin-bottom: 10px;
+    font-size: 17px;
+    user-select: none;
+    cursor: pointer;
+    padding: 12px 8px 12px 20px;
+    position: relative;
+    background-color:antiquewhite;
+}
+
+#edit{
+    position: absolute;
+    right: 65px;
+    background-color: goldenrod;
+    padding: 5px;
+    margin-top: -3px;
+    border-radius: 50%;
+}
+#delete{
+    position: absolute;
+    right: 10px;
+    background-color: red;
+    padding: 5px;
+    margin-top: -3px;
+    border-radius: 50%;
+}
