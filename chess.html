@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-rows: repeat(8,80px);
+            grid-template-columns: repeat(8,80px);
+            width: 640px;
+            grid-gap: 0px;
+            margin-left: 350px;
+            
+        }
+        .box{
+            height: 80px;
+            width: 80px;
+            border: 2px solid black;
+            
+            
+            
+        }
+        .black{
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .white{
+            background-color: white;
+        }
+        .piece {
+           font-family: 'Arial';
+           font-size: 48px;
+           margin-left: 12px;
+           justify-content: center;
+           
+        }
+        #btn1,#btn2{
+            padding: 10px;
+            color: white;
+            background-color: black;
+            font-size: 20px;
+            border-radius: 10px;
+            
+            margin: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <button id="btn1">create chess</button>
+    <button id="btn2">add pans</button>
+    <div class="container"></div>
+
+
+    <script>
+
+        //creating the chess board
+
+        let box
+        let btn1 = document.querySelector('#btn1')
+        btn1.addEventListener('click',function(){
+            
+            let container = document.querySelector('.container')
+            for(let i=0;i<8;i++)
+            {
+                for(let j=0;j<8;j++)
+                {
+                    let box = document.createElement('div')
+                    box.id= `chessBox-${i}-${j}`
+                    box.classList.add('box')
+                    if((i+j) %2 ===0)
+                    {
+                        box.classList.add('black')
+
+                    }
+                    else{
+                        box.classList.add('white')
+                    }
+                    container.appendChild(box)
+
+                }
+            }
+        })
+
+        // adding the pans
+
+        let btn2 = document.querySelector('#btn2')
+        btn2.addEventListener('click',function(){
+        let pieces ={
+            P: '♙', R: '♖', N: '♘', B: '♗', Q: '♕', K: '♔', 
+            p: '♟', r: '♜', n: '♞', b: '♝', q: '♛', k: '♚'  
+        }
+        const a = [
+        'rnbqkbnr',
+        'pppppppp',
+        '........',
+        '........',
+        '........',
+        '........',
+        'PPPPPPPP',
+        'RNBQKBNR'
+        ];
+        let container = document.querySelector('.container')
+        for(let i =0;i<8;i++){
+            for(let j =0; j<8;j++)
+            {
+               if(a[i][j] !== '.')
+               {
+                let span = document.createElement('span')
+                span.classList.add('piece')
+                span.innerText = pieces[a[i][j]]
+                
+                let box = document.getElementById(`chessBox-${i}-${j}`)
+
+          
+
+                box.appendChild(span)
+
+                
+                
+
+
+               }
+                
+            }
+        }
+        })
+    
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
