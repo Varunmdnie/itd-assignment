@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timer</title>
+    <style>
+        .wrapper{
+            width: 70vw;
+            height: 40vh;
+            display: flex;
+            /* border: 2px solid black; */
+            margin: auto;
+            
+       
+        }
+        .timer{
+            width: 200px;
+            /* height: 200px; */
+            border: 2px solid red;
+            margin: 20px; 
+            font-size: 36px;
+            text-align: center;
+            padding-top: 90px;
+            position: relative;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="timer" id="day"></div>
+        <div class="timer" id="hour"></div>
+        <div class="timer" id="minute"></div>
+        <div class="timer" id="seconds"></div>
+    </div>
+
+    <script>
+
+        let time = 3*24*60*60 //3 days
+
+        let timer = setInterval(tick,1000)
+        function tick()
+        {
+            if(time<0){
+                clearInterval(timer)
+            }
+            time--
+
+            let days = Math.floor(time/(24*60*60))
+            let hours = Math.floor((time%(24*60*60))/(60*60))
+            let minutes = Math.floor((time%(60*60))/(60))
+            let seconds = Math.floor(time%60)
+
+            document.querySelector('#day').innerHTML = `${days}\n days`
+            document.querySelector('#hour').innerHTML = `${hours}\n hours`
+            document.querySelector('#minute').innerHTML = `${minutes}\n minutes`
+            document.querySelector('#seconds').innerHTML = `${seconds}\n seconds`
+
+            
+        }
+    </script>
+    
+</body>
+</html>
