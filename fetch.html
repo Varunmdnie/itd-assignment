@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch2</title>
+
+    <style>
+        table{
+            width: 80vw;
+            margin: auto;
+        }
+        table,th,td{
+            border: 2px solid red;
+            border-collapse: collapse;
+            padding: 20px;
+            font-size: 20px;
+        }
+        th{
+            font-size: 28px;
+            
+        }
+        #input{
+            width: 60vw;
+            padding: 5px;
+            margin-bottom: 20px;
+            margin-left: 140px;
+            border: 2px solid blue;
+            font-size: 36px;
+        }
+        button{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="input" placeholder="search" >
+    <button id="sort">Sort by Date newest</button>
+    <button id="sort1">Sort by Date oldest</button>
+    <table >
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>language</th>
+                <th>updated_at</th>
+                <th>html_url</th>
+            </tr>
+        </thead>
+
+        <tbody id="tableData">
+
+        </tbody>
+    </table>
+    
+    <script>
+        let url = 'https://api.github.com/orgs/google/repos'
+        let originalData =[]
+        fetch(url).then((res) => res.json()).then((data) =>{
+            originalData = data;
+            appendTable(data)
+        })
+
+// appending the fetched data to table
+
+     function appendTable(data){
+        let tableData = document.querySelector('#tableData')
+        tableData.innerHTML = '';
+        data.forEach(element => {
+            let row = document.createElement('tr')
+
+            let nameCol = document.createElement('td')
+            nameCol.innerText = element.name
+            row.appendChild(nameCol)
+
+            let languageCol = document.createElement('td')
+            languageCol.innerText = element.language
+            row.appendChild(languageCol)
+
+            let updatedCol = document.createElement('td')
+            updatedCol.innerText = element.updated_at
+            row.appendChild(updatedCol)
+
+            let giturlCol = document.createElement('td')
+            let gitLink = document.createElement('a')
+            gitLink.href = element.html_url
+            gitLink.target = '_blank'
+            gitLink.innerText = element.html_url
+            giturlCol.appendChild(gitLink)
+
+           
+            row.appendChild(giturlCol)
+
+            tableData.appendChild(row)
+
+            
+
+
+            
+        });
+
+     }
+
+     // adding search functionality
+
+     let input = document.querySelector('#input')
+     input.addEventListener('input',function(event){
+        let keyword = (event.target.value || '').toLowerCase()
+        let newdata = originalData.filter((element) => (element.name || '').toLowerCase().includes(keyword) ||
+         (element.language || '').toLowerCase().includes(keyword) ||
+         (element.updated_at || '').toLowerCase().includes(keyword) ||
+         (element.git_url ||'').toLowerCase().includes(keyword))
+
+       
+        appendTable(newdata)
+    })
+
+    //adding sort funtionality
+
+   // Adding sort functionality newest
+   
+    let sort = document.querySelector('#sort');
+    sort.addEventListener('click', function(event) {
+    let sortedDataNew = originalData.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+    appendTable(sortedDataNew);
+
+   })
+
+   // adding sort functionality oldest
+
+    let sort1 = document.querySelector('#sort1');
+    sort1.addEventListener('click', function(event) {
+    let sortedDataOld = originalData.sort((a, b) => new Date(a.updated_at) -new Date(b.updated_at));
+    appendTable(sortedDataOld);
+    })
+
+
+
+   
+    </script>
+
+ 
+</body>
+</html>
