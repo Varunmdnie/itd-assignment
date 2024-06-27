@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calculator2.css">
+    <title>calculator</title>
+</head>
+<body>
+    <div class="container">
+        
+        <input class="input" type="text" accept="number" >
+        
+        <div onclick="clearDisplay()"  class="div1">AC</div>
+        <div onclick="clearEntry()" class="div1">CE</div>
+        <div onclick="setOperation('+')" class="div1">+</div>
+        <div onclick="setOperation('/')" class="div1">/</div>
+        <div onclick="appendNumber('7')" class="div1">7</div>
+        <div onclick="appendNumber('8')" class="div1">8</div>
+        <div onclick="appendNumber('9')" class="div1">9</div>
+        <div onclick="setOperation('*')" class="div1">*</div>
+        <div onclick="appendNumber('4')" class="div1">4</div>
+        <div onclick="appendNumber('5')" class="div1">5</div>
+        <div onclick="appendNumber('6')" class="div1">6</div>
+        <div onclick="setOperation('-')" class="div1">-</div>
+        <div onclick="appendNumber('1')" class="div1">1</div>
+        <div onclick="appendNumber('2')" class="div1">2</div>
+        <div onclick="appendNumber('3')" class="div1">3</div>
+        <div onclick="setOperation('%')" class="div1">%</div>
+        <div onclick="appendNumber('0')" class="div1">0</div>
+        <div onclick="setOperation('**')" class="div1">**</div>
+        <!-- <div class="div1 operator">**</div> -->
+        <div onclick="calculateResult()" id="equals" class="div1">=</div>    
+    </div>
+
+  <script>
+    let input = document.querySelector('.input')
+    let num1 = ''
+    let num2 = ''
+    let operation = null
+
+    function appendNumber(number){
+        num1 = num1 + number
+        updateDisplay()
+    }
+
+    function setOperation(op){
+        if(num1 === '') return
+
+        if(num2 !== '')
+        {
+            calculateResult()
+        }
+        operation = op;
+        num2 = num1
+        num1 =''
+        updateDisplay()
+    
+
+    }
+
+    function calculateResult(){
+        if(num1 == '' || num2 == '') return
+        let n1 = parseFloat(num1)
+        let n2 = parseFloat(num2)
+
+        switch (operation) {
+            case '+':
+                result = n2+n1
+                
+                break;
+            case '-':
+                result = n2-n1
+                break;
+            case '*':
+                result = n2*n1
+                break;
+            case '/': 
+                 result = n2/n1
+                 break;
+            case  '%':
+                result = n2%n1
+                break;  
+            case '**':
+                result = n2*n2
+                break;               
+        
+            default:
+                break;
+        }
+
+        num1 = result
+        operation = null;
+        num2 = ''
+        updateDisplay()
+    }
+
+    function clearDisplay(){
+        num1 = ''
+        num2 = ''
+        operation = null
+        updateDisplay()
+    }
+
+    function clearEntry(){
+        num1 = num1.slice(0,-1)
+        updateDisplay()
+    }
+    function updateDisplay()
+    {
+        let displayValue = num2
+        if(operation !== null){
+            displayValue = displayValue + `${operation}`
+        }
+        displayValue = displayValue + num1
+        input.value = displayValue
+    }
+  
+    
+  </script>
+    
+</body>
+</html>
